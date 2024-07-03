@@ -1,0 +1,55 @@
+/* @font-face {
+    font-family: 'Inter';
+    src: url('./inter/static/Inter-Regular.ttf') format('ttf');
+} */
+
+
+@font-face {
+    font-family: 'Inter-Black';
+    src: url('./inter/static/Inter-Black.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'Inter-Bold';
+    src: url('./inter/static/Inter-Bold.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'Inter-ExtraBold';
+    src: url('./inter/static/Inter-ExtraBold.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'Inter-ExtraLight';
+    src: url('./inter/static/Inter-ExtraLight.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'Inter-Light';
+    src: url('./inter/static/Inter-Light.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'Inter-Medium';
+    src: url('./inter/static/Inter-Medium.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'Inter-Regular';
+    src: url('./inter/static/Inter-Regular.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'Inter-SemiBold';
+    src: local('Inter-SemiBold'),
+    url('~@/assets/css/inter/static/Inter-SemiBold.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'Inter-Thin';
+    src: url('./inter/static/Inter-Thin.ttf') format('ttf');
+}
+
+body{
+    @apply font-Inter
+}
