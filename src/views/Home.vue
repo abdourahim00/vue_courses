@@ -1,5 +1,5 @@
 <template>
-  <section class="font-Inter relative">
+  <section class="relative">
     <div class="absolute left-0">
       <svg
         width="177"
@@ -27,7 +27,7 @@
       <div class="flex flex-col lg:flex-row gap-32 relative">
         <div class="flex flex-col justify-center">
           <div>
-            <h1 class="text-7xl font-Inter-light">
+            <h1 class="text-7xl font-Inter-SemiBold">
               Explore Live <br />
               Creative Classes
             </h1>
@@ -62,7 +62,7 @@
         <div class="relative">
           <div class="">
             <img
-              src="../assets/images/img1.png"
+              src="@/assets/images/img1.png"
               alt="img"
               class="rounded-2xl"
               width="100%"
