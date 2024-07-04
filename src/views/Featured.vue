@@ -14,8 +14,8 @@
     <div class="item">
       <div class="relative">
         <img src="@/assets/images/featured.png" alt="" class="w-full border-t border-x rounded-t-xl" />
-        <div class="absolute left-5 bottom-5">
-          <button class="bg-price-bg px-2 py-1 text-sm rounded-full">$99.0</button>
+        <div class="absolute ml-5 left-0 bottom-[176px] sm:bottom-[160px] lg:bottom-[176px]">
+          <button class="bg-price-bg px-2 rounded-full text-sm">$99.0</button>
         </div>
       </div>
       <div class="bg-white pt-5 px-5 pb-7 shadow-xl border border-t-0 rounded-b-xl">
@@ -38,8 +38,8 @@
     <div class="item">
       <div class="relative">
         <img src="@/assets/images/featured.png" alt="" class="w-full border-t border-x rounded-t-xl" />
-        <div class="absolute left-5 bottom-5">
-          <button class="bg-price-bg px-2 py-1 text-sm rounded-full">$99.0</button>
+        <div class="absolute ml-5 left-0 bottom-[176px] sm:bottom-[160px] lg:bottom-[176px]">
+          <button class="bg-price-bg px-2 rounded-full text-sm">$99.0</button>
         </div>
       </div>
       <div class="bg-white pt-5 px-5 pb-7 shadow-xl border border-t-0 rounded-b-xl">
@@ -51,7 +51,7 @@
           simply way in here
         </p>
         <div class="flex items-center gap-4">
-          <img src="@/assets/images/avatar1.png" alt="" class="w-10 h-10" />
+          <img src="@/assets/images/avatar2.png" alt="" class="w-10 h-10" />
           <p class="text-p-color font-Inter text-sm">
             by Albert Flores
           </p>
@@ -62,8 +62,8 @@
     <div class="item">
       <div class="relative">
         <img src="@/assets/images/featured.png" alt="" class="w-full border-t border-x rounded-t-xl" />
-        <div class="absolute left-5 bottom-5">
-          <button class="bg-price-bg px-2 py-1 text-sm rounded-full">$99.0</button>
+        <div class="absolute ml-5 left-0 bottom-[176px] sm:bottom-[160px] lg:bottom-[176px]">
+          <button class="bg-price-bg px-2 rounded-full text-sm">$99.0</button>
         </div>
       </div>
       <div class="bg-white pt-5 px-5 pb-7 shadow-xl border border-t-0 rounded-b-xl">
@@ -75,7 +75,7 @@
           simply way in here
         </p>
         <div class="flex items-center gap-4">
-          <img src="@/assets/images/avatar1.png" alt="" class="w-10 h-10" />
+          <img src="@/assets/images/avatar3.png" alt="" class="w-10 h-10" />
           <p class="text-p-color font-Inter text-sm">
             by Albert Flores
           </p>
@@ -83,7 +83,17 @@
       </div>
     </div>
   </div>
+  
 </div>
+    <div class="flex justify-center pb-24">
+      <button
+        to="#"
+        class="px-5 py-2.5 text-white border border-black bg-black rounded-lg"
+      >
+        View All courses
+      </button>
+    </div>
+    
   </section>
 </template>
 
