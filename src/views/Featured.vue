@@ -9,125 +9,81 @@
       the most simply way in here
     </p>
 
-    <div class="container mx-auto max-w-7xl py-14">
-      <div class="grid grid-cols-12 gap-4">
-        <div class="item col-span-4">
-          <div class="relative">
-            <div class="">
-              <img src="@/assets/images/featured.png" alt="" class="border rounded-md" />
-            </div>
-            <div class="absolute ml-5 left-0 bottom-44">
-              <button class="bg-price-bg px-2 rounded-l-full rounded-r-full">$99.0</button>
-            </div>
-          </div>
-          <div class="bg-white pt-5 text-xl mr-5 px-3 shadow-xl border rounded-xl">
-            <div class="ml-5">
-              <div class="pb-2">
-                <p class="font-Inter-SemiBold text-2xl">The Complete Copywriting</p>
-              </div>
-              <div class="pb-2">
-                <p class="text-lesson-color font-Inter text-xs">17 Lesson</p>
-              </div>
-              <div>
-                <p class="text-p-color font-Inter text-sm">
-                  Provide most popular courses that your want <br />
-                  to join and lets start the course for the most <br />
-                  simply way in here
-                </p>
-              </div>
-              <div class="flex pt-4 gap-4 pb-7">
-                <div class="">
-                  <img src="@/assets/images/avatar1.png" alt="" />
-                </div>
-                <div>
-                  <p class="text-p-color font-Inter text-sm text-center">
-                    by Albert Flores
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div class="container mx-auto max-w-7xl py-14 px-4 sm:px-6 lg:px-8">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="item">
+      <div class="relative">
+        <img src="@/assets/images/featured.png" alt="" class="w-full border-t border-x rounded-t-xl" />
+        <div class="absolute left-5 bottom-5">
+          <button class="bg-price-bg px-2 py-1 text-sm rounded-full">$99.0</button>
         </div>
-
-        <div class="item col-span-4">
-          <div class="relative">
-            <div class="">
-              <img src="@/assets/images/featured.png" alt="" class="border rounded-md" />
-            </div>
-            <div class="absolute ml-5 left-0 bottom-44">
-              <button class="bg-price-bg px-2 rounded-l-full rounded-r-full">$99.0</button>
-            </div>
-          </div>
-          <div class="bg-white pt-5 text-xl mr-5 px-3 shadow-xl border rounded-xl">
-            <div class="ml-5">
-              <div class="pb-2">
-                <p class="font-Inter-SemiBold text-2xl">The Complete Copywriting</p>
-              </div>
-              <div class="pb-2">
-                <p class="text-lesson-color font-Inter text-xs">17 Lesson</p>
-              </div>
-              <div>
-                <p class="text-p-color font-Inter text-sm">
-                  Provide most popular courses that your want <br />
-                  to join and lets start the course for the most <br />
-                  simply way in here
-                </p>
-              </div>
-              <div class="flex pt-4 gap-4 pb-7">
-                <div class="">
-                  <img src="@/assets/images/avatar2.png" alt="" />
-                </div>
-                <div>
-                  <p class="text-p-color font-Inter text-sm text-center">
-                    by Albert Flores
-                  </p>
-                </div>
-              </div>
-              <div></div>
-            </div>
-            <div></div>
-          </div>
-        </div>
-
-        <div class="item col-span-4">
-          <div class="relative">
-            <div class="">
-              <img src="@/assets/images/featured.png" alt="" class="border rounded-md" />
-            </div>
-            <div class="absolute ml-5 left-0 bottom-44">
-              <button class="bg-price-bg px-2 rounded-l-full rounded-r-full">$99.0</button>
-            </div>
-          </div>
-          <div class="bg-white pt-5 text-xl mr-5 px-3 shadow-xl border rounded-xl">
-            <div class="ml-5">
-              <div class="pb-2">
-                <p class="font-Inter-SemiBold text-2xl">The Complete Copywriting</p>
-              </div>
-              <div class="pb-2">
-                <p class="text-lesson-color font-Inter text-xs">17 Lesson</p>
-              </div>
-              <div>
-                <p class="text-p-color font-Inter text-sm">
-                  Provide most popular courses that your want <br />
-                  to join and lets start the course for the most <br />
-                  simply way in here
-                </p>
-              </div>
-              <div class="flex pt-4 gap-4 pb-7">
-                <div class="">
-                  <img src="@/assets/images/avatar3.png" alt="" />
-                </div>
-                <div>
-                  <p class="text-p-color font-Inter text-sm text-center">
-                    by Albert Flores
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+      </div>
+      <div class="bg-white pt-5 px-5 pb-7 shadow-xl border border-t-0 rounded-b-xl">
+        <h2 class="font-Inter-SemiBold text-xl sm:text-2xl mb-2">The Complete Copywriting</h2>
+        <p class="text-lesson-color font-Inter text-xs mb-2">17 Lesson</p>
+        <p class="text-p-color font-Inter text-sm mb-4">
+          Provide most popular courses that your want 
+          to join and lets start the course for the most 
+          simply way in here
+        </p>
+        <div class="flex items-center gap-4">
+          <img src="@/assets/images/avatar1.png" alt="" class="w-10 h-10" />
+          <p class="text-p-color font-Inter text-sm">
+            by Albert Flores
+          </p>
         </div>
       </div>
     </div>
+
+    <div class="item">
+      <div class="relative">
+        <img src="@/assets/images/featured.png" alt="" class="w-full border-t border-x rounded-t-xl" />
+        <div class="absolute left-5 bottom-5">
+          <button class="bg-price-bg px-2 py-1 text-sm rounded-full">$99.0</button>
+        </div>
+      </div>
+      <div class="bg-white pt-5 px-5 pb-7 shadow-xl border border-t-0 rounded-b-xl">
+        <h2 class="font-Inter-SemiBold text-xl sm:text-2xl mb-2">The Complete Copywriting</h2>
+        <p class="text-lesson-color font-Inter text-xs mb-2">17 Lesson</p>
+        <p class="text-p-color font-Inter text-sm mb-4">
+          Provide most popular courses that your want 
+          to join and lets start the course for the most 
+          simply way in here
+        </p>
+        <div class="flex items-center gap-4">
+          <img src="@/assets/images/avatar1.png" alt="" class="w-10 h-10" />
+          <p class="text-p-color font-Inter text-sm">
+            by Albert Flores
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="relative">
+        <img src="@/assets/images/featured.png" alt="" class="w-full border-t border-x rounded-t-xl" />
+        <div class="absolute left-5 bottom-5">
+          <button class="bg-price-bg px-2 py-1 text-sm rounded-full">$99.0</button>
+        </div>
+      </div>
+      <div class="bg-white pt-5 px-5 pb-7 shadow-xl border border-t-0 rounded-b-xl">
+        <h2 class="font-Inter-SemiBold text-xl sm:text-2xl mb-2">The Complete Copywriting</h2>
+        <p class="text-lesson-color font-Inter text-xs mb-2">17 Lesson</p>
+        <p class="text-p-color font-Inter text-sm mb-4">
+          Provide most popular courses that your want 
+          to join and lets start the course for the most 
+          simply way in here
+        </p>
+        <div class="flex items-center gap-4">
+          <img src="@/assets/images/avatar1.png" alt="" class="w-10 h-10" />
+          <p class="text-p-color font-Inter text-sm">
+            by Albert Flores
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
   </section>
 </template>
 
