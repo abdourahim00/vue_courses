@@ -23,11 +23,11 @@
       </svg>
     </div>
 
-    <div class="container mx-auto max-w-7xl py-14">
+    <div class="container mx-auto max-w-7xl py-14 px-5">
       <div class="flex flex-col lg:flex-row gap-32 relative">
         <div class="flex flex-col justify-center">
           <div>
-            <h1 class="text-7xl font-Inter-SemiBold">
+            <h1 class="text-7xl font-Inter-SemiBold sm:text-5xl">
               Explore Live <br />
               Creative Classes
             </h1>

@@ -11,7 +11,9 @@ module.exports = {
         'color-border-button': '#D0D5DD',
         'p-color': '#384250',
         'color-section': '#F9FAFB',
-        'choose-bg': '#F9FAFB'
+        'choose-bg': '#F9FAFB',
+        'lesson-color': '#1C5CFF',
+        'price-bg' : '#F2F4F7'
       },
       fontFamily: {
         "Inter-Black": ["Inter-Black", "sans-serif"],
@@ -20,7 +22,7 @@ module.exports = {
         "Inter-ExtraLight": ["Inter-ExtraLight", "sans-serif"],
         "Inter-light": ["Inter-Light", "sans-serif"],
         "Inter-Medium": ["Inter-Medium", "sans-serif"],
-        "Inter": ["Inter", "sans-serif"],
+        "Inter": ["Inter-Regular", "sans-serif"],
         "Inter-SemiBold": ["Inter-SemiBold", "sans-serif"],
         "Inter-Thin": ["Inter-Thin", "sans-serif"],
       },
