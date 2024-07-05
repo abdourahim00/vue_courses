@@ -10,8 +10,8 @@
     </p>
 
     <div class="container mx-auto max-w-7xl py-14 px-4 sm:px-6 lg:px-8">
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-    <!-- <div class="item">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- <div class="item">
       <div class="relative">
         <img src="@/assets/images/featured.png" alt="" class="w-full border-t border-x rounded-t-xl" />
         <div class="absolute ml-5 left-0 bottom-[176px] sm:bottom-[160px] lg:bottom-[176px]">
@@ -34,18 +34,25 @@
         </div>
       </div>
     </div> -->
-    <FeaturedComponent v-for="(course, index) in courses"
-        :key="index"
-        :imageSrc="course.imageSrc"
-        :price="course.price"
-        :title="course.title"
-        :lessonCount="course.lessonCount"
-        :description="course.description"
-        :avatarSrc="course.avatarSrc"
-        :author="course.author"></FeaturedComponent>
+        <!-- <FeaturedComponent
+          v-for="(course, index) in courses"
+          :key="index"
+          :imageSrc="course.imageSrc"
+          :price="course.price"
+          :title="course.title"
+          :lessonCount="course.lessonCount"
+          :description="course.description"
+          :avatarSrc="course.avatarSrc"
+          :author="course.author"
+        >
+        </FeaturedComponent> -->
+        <FeaturedComponent
+          v-for="(course, index) in courses"
+          :courses="course"
+          :key="index"
+        ></FeaturedComponent>
 
-
-    <!-- <div class="item">
+        <!-- <div class="item">
       <div class="relative">
         <img src="@/assets/images/featured.png" alt="" class="w-full border-t border-x rounded-t-xl" />
         <div class="absolute ml-5 left-0 bottom-[176px] sm:bottom-[160px] lg:bottom-[176px]">
@@ -69,7 +76,7 @@
       </div>
     </div> -->
 
-    <!-- <div class="item">
+        <!-- <div class="item">
       <div class="relative">
         <img src="@/assets/images/featured.png" alt="" class="w-full border-t border-x rounded-t-xl" />
         <div class="absolute ml-5 left-0 bottom-[176px] sm:bottom-[160px] lg:bottom-[176px]">
@@ -92,60 +99,61 @@
         </div>
       </div>
     </div> -->
-  </div>
-  
-</div>
+      </div>
+    </div>
     <div class="flex justify-center pb-24">
       <router-link
         to="#"
         class="px-5 py-2.5 text-white border border-black bg-black rounded-lg"
       >
         View All courses
-    </router-link>
+      </router-link>
     </div>
-    
   </section>
 </template>
 
 <script>
-import FeaturedComponent from '../components/FeaturedComponent.vue';
+import FeaturedComponent from "../components/FeaturedComponent.vue";
 export default {
-  components:{
-    FeaturedComponent : FeaturedComponent,
+  components: {
+    FeaturedComponent: FeaturedComponent,
   },
-  data(){
-    return{
+  data() {
+    return {
       courses: [
         {
-          imageSrc: "@/assets/images/featured.png",
-          price : "$99.0",
+          imageSrc: "/src/assets/images/featured.png",
+          price: "$99.0",
           title: "The Complete Copywriting",
-          lessonCount : "17 Lesson",
-          description: "Provide most popular courses that your want to join and lets start the course for the most simply way in here" ,
-          avatarSrc : "@/assets/images/avatar1.png",
+          lessonCount: "17 Lesson",
+          description:
+            "Provide most popular courses that your want to join and lets start the course for the most simply way in here",
+          avatarSrc: "/src/assets/images/avatar1.png",
           author: "Albert Flores",
         },
         {
-          imageSrc: "@/assets/images/featured.png",
-          price : "$99.0",
+          imageSrc: "/src/assets/images/featured.png",
+          price: "$99.0",
           title: "The Complete Copywriting",
-          lessonCount : "17 Lesson",
-          description: "Provide most popular courses that your want to join and lets start the course for the most simply way in here" ,
-          avatarSrc : "@/assets/images/avatar2.png",
+          lessonCount: "17 Lesson",
+          description:
+            "Provide most popular courses that your want to join and lets start the course for the most simply way in here",
+          avatarSrc: "/src/assets/images/avatar2.png",
           author: "Albert Flores",
         },
         {
-          imageSrc: "@/assets/images/featured.png",
-          price : "$99.0",
+          imageSrc: "/src/assets/images/featured.png",
+          price: "$99.0",
           title: "The Complete Copywriting",
-          lessonCount : "17 Lesson",
-          description: "Provide most popular courses that your want to join and lets start the course for the most simply way in here" ,
-          avatarSrc : "@/assets/images/avatar3.png",
+          lessonCount: "17 Lesson",
+          description:
+            "Provide most popular courses that your want to join and lets start the course for the most simply way in here",
+          avatarSrc: "/src/assets/images/avatar3.png",
           author: "Albert Flores",
         },
-      ]
-    }
-  }
+      ],
+    };
+  },
 };
 </script>
 
