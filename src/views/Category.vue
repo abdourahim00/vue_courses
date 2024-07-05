@@ -9,9 +9,9 @@
       </p>
 
       <div class="container mx-auto max-w-7xl py-14 px-5">
-    <div class="grid grid-cols-6 sm:grid-cols-12 gap-4 justify-center">
+    <div class="grid grid-cols-6 sm:grid-cols-12 gap-4 justify-items-center">
 
-        <div class="item col-span-6 sm:col-span-3 justify-center">
+        <div class="item col-span-6 sm:col-span-3">
             <div>
                 <img src="@/assets/images/category.png" alt="">
                 <p class="font-Inter-Bold">Design</p>
@@ -19,7 +19,7 @@
             </div>
         </div>
 
-        <div class="item col-span-6 sm:col-span-3 justify-center">
+        <div class="item col-span-6 sm:col-span-3">
             <div>
                 <img src="@/assets/images/category2.png" alt="">
             </div>
@@ -29,7 +29,7 @@
             </div>
         </div>
 
-        <div class="item col-span-6 sm:col-span-3 justify-center">
+        <div class="item col-span-6 sm:col-span-3">
             <div>
                 <img src="@/assets/images/category3.png" alt="">
             </div>
@@ -39,7 +39,7 @@
             </div>
         </div>
 
-        <div class="item col-span-6 sm:col-span-3 justify-center">
+        <div class="item col-span-6 sm:col-span-3">
             <div>
                 <img src="@/assets/images/category4.png" alt="">
             </div>
