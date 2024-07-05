@@ -113,7 +113,7 @@
 </template>
 
 <script>
-import FeaturedComponent from "../components/FeaturedComponent.vue";
+import FeaturedComponent from "./FeaturedComponent.vue";
 export default {
   components: {
     FeaturedComponent: FeaturedComponent,

@@ -13,7 +13,8 @@ module.exports = {
         'color-section': '#F9FAFB',
         'choose-bg': '#F9FAFB',
         'lesson-color': '#1C5CFF',
-        'price-bg' : '#F2F4F7'
+        'price-bg' : '#F2F4F7',
+        'talent-bg' : '#FFEBEF'
       },
       fontFamily: {
         "Inter-Black": ["Inter-Black", "sans-serif"],

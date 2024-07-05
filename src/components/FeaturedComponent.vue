@@ -1,4 +1,5 @@
 <template>
+<router-link to="/" class="block">
   <div class="item">
     <div class="relative">
       <img
@@ -21,19 +22,16 @@
       <p class="text-lesson-color font-Inter text-xs mb-2">{{ courses.lessonCount }}</p>
       <p class="text-p-color font-Inter text-sm mb-4">
         {{ courses.description }}
-        <!-- Provide most popular courses that your want 
-          to join and lets start the course for the most 
-          simply way in here -->
       </p>
       <div class="flex items-center gap-4">
         <img :src="courses.avatarSrc" alt="" class="w-10 h-10" />
         <p class="text-p-color font-Inter text-sm">
           by {{ courses.author }}
-          <!-- Albert Flores -->
         </p>
       </div>
     </div>
   </div>
+</router-link>
 </template>
 
 <script>
