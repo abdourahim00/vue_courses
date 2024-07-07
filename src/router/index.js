@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import DetailsView from '../views/DetailsView.vue'
 
 // import Header from '../components/Header.vue'
 
@@ -15,6 +16,12 @@ const router = new VueRouter({
       name: 'home',
       component: HomeView
     },
+
+    {
+      path: '/details',
+      name : 'details',
+      component: DetailsView
+    }
     
 
 

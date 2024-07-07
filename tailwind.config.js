@@ -14,7 +14,10 @@ module.exports = {
         'choose-bg': '#F9FAFB',
         'lesson-color': '#1C5CFF',
         'price-bg' : '#F2F4F7',
-        'talent-bg' : '#FFEBEF'
+        'talent-bg' : '#FFEBEF',
+        'formBack' : '#150B3D',
+        'input-color' : '#667085',
+        // 'bg-details' : '#F9FAFB'
       },
       fontFamily: {
         "Inter-Black": ["Inter-Black", "sans-serif"],
