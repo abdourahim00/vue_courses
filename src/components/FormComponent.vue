@@ -1,5 +1,5 @@
 <template>
-<section class="pt-12 sm:pt-24 md:pt-36 lg:pt-48">
+<section class="pt-12 sm:pt-24 md:pt-36 lg:pt-48 overflow-hidden mb-14">
   <div
     class="bg-formBack border rounded-2xl bg-contain container mx-auto max-w-7xl py-6 sm:py-8 md:py-10 lg:py-14 px-4 sm:px-5 relative h-[320px] sm:h-[400px] md:h-[440px] lg:h-[480px]"
   >
@@ -9,8 +9,7 @@
         height="122"
         viewBox="0 0 105 122"
         fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+        xmlns="http://www.w3.org/2000/svg">
         <circle cx="17" cy="34" r="88" fill="#FCD53A" />
       </svg>
     </div>
@@ -38,9 +37,10 @@
         <circle cx="103" cy="103" r="103" fill="#1C5CFF" />
       </svg>
     </div>
-    <div>
-      <h1 class="font-Inter-Bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white text-center pb-3 sm:pb-4 md:pb-5 pt-12 sm:pt-16 md:pt-20 lg:pt-24 ml-14">
-        Get the best sent to your <br class="hidden sm:inline"> inbox, every month
+    <div class="relative">
+      <div>
+      <h1 class="font-Inter-Bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white text-center pb-3 sm:pb-4 md:pb-5 pt-12 sm:pt-16 md:pt-20 lg:pt-24 pl-5">
+        Get the best sent to your <br> inbox, every month
       </h1>
     </div>
     <div class="flex flex-col sm:flex-row items-center justify-center pt-6 sm:pt-8 md:pt-10 gap-3 sm:gap-5">
@@ -59,7 +59,9 @@
           Subscribe
         </router-link>
       </div>
+    </div>  
     </div>
+ 
   </div>
 </section>
 </template>

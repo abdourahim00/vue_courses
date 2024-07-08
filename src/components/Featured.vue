@@ -1,6 +1,6 @@
 <template>
   <section class="bg-choose-bg">
-    <div class="text-center">
+    <div class="text-center pt-5">
       <h1 class="font-Inter-Bold text-4xl pt-16 mb-5">Featured Courses</h1>
     </div>
     <p class="text-p-color text-center">

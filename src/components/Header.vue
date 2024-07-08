@@ -2,7 +2,10 @@
   <div class="font-Inter bg-white w-full top-0 z-10 shadow-md px-4 md:px-28">
     <div class="flex justify-between items-center">
       <div class="logo py-5">
-        <img src="../assets/images/logo.svg" alt="logo" />
+        <router-link to="/">
+          <img src="../assets/images/logo.svg" alt="logo" />
+        </router-link>
+        
       </div>
 
       <button

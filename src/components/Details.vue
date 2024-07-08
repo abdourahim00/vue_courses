@@ -15,7 +15,7 @@
       <div class="flex gap-12">
         <div class="ml-20 mt-10">
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-Inter-Bold mb-5">
-            Advanced Funnels with
+            Advanced Funnels with <br />
             Google Analytics
           </h1>
           <p class="text-p-color font-Inter text-2xl mb-5">
@@ -32,8 +32,12 @@
               <img
                 src="@/assets/images/img-details.png"
                 alt=""
-                class="rounded-3xl"
+                class="w-full rounded-3xl"
               />
+              <!-- <iframe width="900" height="330" src="https://www.youtube.com/embed/7DsnHjvxaso?si=jfyx-aN7g5Ew6PDc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+              <!-- <video width="100%" height="100%" controls>
+                <source src="https://www.youtube.com/watch?v=7DsnHjvxaso&ab_channel=%D8%B1%D9%88%D8%A7%D8%A6%D8%B9%D9%81%D8%B6%D9%8A%D9%84%D8%A9%D8%A7%D9%84%D8%B4%D9%8A%D8%AE%2F%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%A8%D8%A7%D8%B3%D8%B7%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B5%D9%85%D8%AF"/>
+              </video> -->
             </div>
             <div class="absolute top-44 ml-80">
               <svg
@@ -49,18 +53,20 @@
             </div>
           </div>
         </div>
-        <div class="absolute right-0 mt-10 bg-white border rounded-2xl mr-40 pb-5">
+        <div
+          class="absolute right-0 mt-10 bg-white border rounded-2xl mr-40 pb-5 shadow-xl"
+        >
           <div class="p-6">
             <p class="text-2xl font-Inter-Bold sm:text-xl mb-3">$99.00 USD</p>
             <p class="text-p-color font-Inter text-xs mb-4">
-              Provide most popular courses that your want <br>
-              to join and lets start the course for the most <br>
+              Provide most popular courses that your want <br />
+              to join and lets start the course for the most <br />
               simply way in here
             </p>
             <div class="text-center">
               <router-link
                 to="/cart"
-                class="inline-block px-12 py-4 text-sm text-white border border-black bg-black rounded-lg mb-5"
+                class="inline-block px-24 py-4 text-sm text-white border border-black bg-black rounded-xl mb-5"
               >
                 Add to Cart
               </router-link>
@@ -142,20 +148,12 @@
               </div>
               <div>
                 <p class="text-p-color font-Inter-SemiBold mb-2">
-              Intermediate
-            </p>
-            <p class="text-p-color font-Inter-SemiBold mb-2">
-              6hr 48
-            </p>
-            <p class="text-p-color font-Inter-SemiBold mb-2">
-              40 
-            </p>
-            <p class="text-p-color font-Inter-SemiBold mb-2">
-              English
-            </p>
-            
+                  Intermediate
+                </p>
+                <p class="text-p-color font-Inter-SemiBold mb-2">6hr 48</p>
+                <p class="text-p-color font-Inter-SemiBold mb-2">40</p>
+                <p class="text-p-color font-Inter-SemiBold mb-2">English</p>
               </div>
-             
             </div>
           </div>
         </div>

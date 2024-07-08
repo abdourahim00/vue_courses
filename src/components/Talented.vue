@@ -1,5 +1,5 @@
 <template>
-<section class="bg-talent-bg">
+<section class="bg-talent-bg overflow-hidden">
   <div class="container mx-auto max-w-7xl py-8 sm:py-14 px-4 sm:px-5">
     <div class="flex flex-col lg:flex-row gap-12 sm:gap-20 lg:gap-44">
       <div class="relative mx-auto lg:mx-0 w-full max-w-md lg:max-w-none">

@@ -1,7 +1,7 @@
 <template>
   <section class="bg-choose-bg">
-    <div class="text-center pt-10">
-        <h1 class="font-Inter-Bold text-4xl mb-5">Why Choose Us</h1>
+    <div class="text-center pt-20">
+        <h1 class="font-Inter-Bold text-5xl mb-10">Why Choose Us</h1>
     </div>
     <div class="container mx-auto max-w-7xl py-14 px-5">
   <div class="flex flex-col lg:flex-row justify-center items-center gap-32">

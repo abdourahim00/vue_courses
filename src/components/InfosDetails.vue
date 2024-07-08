@@ -1,6 +1,6 @@
 <template>
-  <section>
-    <div class="max-w-7xl py-14 px-5 ml-20">
+  <section class="pt-5 lg:pt-96 ">
+    <div class="container mx-auto max-w-7xl py-14 px-5">
       <h1 class="text-3xl font-Inter-Bold sm:text-3xl mb-5">
         About the course
       </h1>

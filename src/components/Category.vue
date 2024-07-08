@@ -1,7 +1,7 @@
 <template>
   <section class="mb-5">
-        <div class="text-center pt-10">
-            <h1 class="font-Inter-Bold text-4xl mb-5">Courses categories</h1>
+        <div class="text-center pt-20">
+            <h1 class="font-Inter-Bold text-5xl mb-5">Courses categories</h1>
         </div>
       <p class="text-p-color text-center">
         Provide most popular courses that your want to join and lets start the
