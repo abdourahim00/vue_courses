@@ -68,7 +68,7 @@ export default {
     methods: {
       async getCoursesRecommanded(){
         try{
-          const { data } = await this.$axios.get("/coursesRecommended/" + this.id);
+          const { data } = await this.$axios.get("/coursesRecommended/" + this.courses.category_id);
           console.log('cours recom data', data);
           this.recommanded = data.data.cours;
           // console.log(this.recommanded);

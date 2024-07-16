@@ -25,14 +25,14 @@ export default {
   data() {
     return {
       detailsCourse: [],
-      slug: this.$route.params.slug,
+      slug: "",
     };
   },
 
   methods: {
     async getDetails() {
       try {
-        const { data } = await this.$axios.get("/getDetails/" + this.slug);
+        const { data } = await this.$axios.get("/getDetails/" + this.$route.params.slug);
         this.detailsCourse = data.data.cours;
         // console.log("Test", this.detailsCourse);
       } catch (error) {
