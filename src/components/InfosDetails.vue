@@ -62,7 +62,7 @@ export default {
     data(){
       return{
         recommanded: [],
-        id : this.$route.params.id
+        // id : this.$route.params.id
       }
     },
     methods: {
@@ -70,6 +70,7 @@ export default {
         try{
           const { data } = await this.$axios.get("/coursesRecommended/" + this.courses.category_id);
           console.log('cours recom data', data);
+          console.log('id category', this.courses.category_id);
           this.recommanded = data.data.cours;
           // console.log(this.recommanded);
           } catch(error){
@@ -77,9 +78,12 @@ export default {
         }
       }
     },
-    created(){
-      this.getCoursesRecommanded();
+    mounted(){
+      this.getCoursesRecommanded()
     }
+    // created(){
+    //   this.getCoursesRecommanded();
+    // }
 }
 </script>
 
