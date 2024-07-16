@@ -15,12 +15,11 @@
       <div class="grid grid-cols-12 gap-4">
         <div class="col-span-12 lg:col-span-8">
           <h1 class="text-3xl md:text-5xl lg:text-5xl font-Inter-Bold mb-5">
-            Advanced Funnels with Google Analytics
+            {{ courses.title }}
           </h1>
 
           <p class="text-p-color font-Inter text-xl mb-5">
-            Lorem ipsum dolor sit amet, consectere adipiscing elit. Feugiat
-            feugiat congue viverra facilisis.
+            {{ courses.description }}
           </p>
 
           <div class="flex items-center gap-4 mb-10">
@@ -28,11 +27,11 @@
             <p class="text-p-color font-Inter text-sm">by Albert Flores</p>
           </div>
 
-          <div class="relative lg:-mb-[30rem]">
+          <div class="relative lg:-mb-[30rem]" >
             <img
-              src="@/assets/images/img-details.png"
+              :src="courses.image"
               alt=""
-              class="w-full rounded-3xl"
+              class="max-w-full rounded-3xl" 
             />
 
             <div class="absolute left-[40%] top-[40%] right[50%]">
@@ -51,12 +50,12 @@
         </div>
         <div class="lg:col-span-1 col-span-12"></div>
         <div
-          class="lg:col-span-3 col-span-12 bg-white rounded-2xl shaddow-xl shadow-2xl w-[100%] h-[100%]"
+          class="lg:col-span-3 col-span-12 bg-white rounded-2xl shaddow-xl shadow-2xl w-[100%] h-[50%]"
         >
           <div>
             <div class="p-4">
               <p class="text-2xl font-Inter-Bold sm:text-xl mt-5 mb-5">
-                $99.00 USD
+                {{ courses.price }} F CFA
               </p>
               <p class="text-p-color font-Inter text-sm mb-5">
                 Provide most popular courses that your want to join and lets
@@ -233,7 +232,12 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    courses : {},
+
+  }
+};
 </script>
 
 <style>

@@ -1,29 +1,50 @@
 <template>
-    <div>
-      <!-- <Details></Details> -->
-     <Details2></Details2>
-     <InfosDetails></InfosDetails>
-      <!-- <div class="mt-96"> -->
-      <!-- <div class="mt-56"> -->
-        <!-- 
+  <div>
+    <!-- <Details></Details> -->
+
+    <Details2 :courses="detailsCourse"></Details2>
+    <InfosDetails :courses="detailsCourse"></InfosDetails>
+    <!-- <div class="mt-96"> -->
+    <!-- <div class="mt-56"> -->
+    <!-- 
       </div> -->
-      
-    </div>
-  </template>
+  </div>
+</template>
   
   <script>
-  import Details from "../components/Details.vue";
-  import InfosDetails from "../components/InfosDetails.vue";
-  import Details2 from "../components/Details2.vue";
-  export default {
-    components: {
-     Details: Details,
-     InfosDetails: InfosDetails,
-     Details2 : Details2,
+import Details from "../components/Details.vue";
+import InfosDetails from "../components/InfosDetails.vue";
+import Details2 from "../components/Details2.vue";
+export default {
+  components: {
+    Details,
+    InfosDetails,
+    Details2,
+  },
+
+  data() {
+    return {
+      detailsCourse: [],
+      slug: this.$route.params.slug,
+    };
+  },
+
+  methods: {
+    async getDetails() {
+      try {
+        const { data } = await this.$axios.get("/getDetails/" + this.slug);
+        this.detailsCourse = data.data.cours;
+        // console.log("Test", this.detailsCourse);
+      } catch (error) {
+        console.error(error);
+      }
     },
-  };
-  </script>
+  },
+  created() {
+    this.getDetails();
+  },
+};
+</script>
   
   <style>
-  
-  </style>
+</style>

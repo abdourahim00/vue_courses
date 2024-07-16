@@ -1,9 +1,9 @@
 <template>
-<router-link to="/" class="block">
+<router-link :to="`/details/${courses.slug}`" class="block">
   <div class="item">
     <div class="relative">
       <img
-        :src="courses.imageSrc"
+        :src="courses.image"
         alt=""
         class="w-full border-t border-x rounded-t-xl"
       />
@@ -24,9 +24,9 @@
         {{ courses.description }}
       </p>
       <div class="flex items-center gap-4">
-        <img :src="courses.avatarSrc" alt="" class="w-10 h-10" />
+        <img src="/src/assets/images/avatar1.png" alt="" class="w-10 h-10" />
         <p class="text-p-color font-Inter text-sm">
-          by {{ courses.author }}
+        by Albert Flores
         </p>
       </div>
     </div>

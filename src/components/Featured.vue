@@ -46,11 +46,13 @@
           :author="course.author"
         >
         </FeaturedComponent> -->
+
+
+
         <FeaturedComponent
-          v-for="(course, index) in courses"
+          v-for="(course, index) in allCourses.slice(0, 3)"
           :courses="course"
-          :key="index"
-        ></FeaturedComponent>
+          :key="index"></FeaturedComponent>
 
         <!-- <div class="item">
       <div class="relative">
@@ -102,12 +104,12 @@
       </div>
     </div>
     <div class="flex justify-center pb-24">
-      <router-link
-        to="#"
+      <button
+      @click="seeMore()"
         class="px-5 py-2.5 text-white border border-black bg-black rounded-lg"
       >
         View All courses
-      </router-link>
+      </button>
     </div>
   </section>
 </template>
@@ -120,40 +122,58 @@ export default {
   },
   data() {
     return {
-      courses: [
-        {
-          imageSrc: "/src/assets/images/featured.png",
-          price: "$99.0",
-          title: "The Complete Copywriting",
-          lessonCount: "17 Lesson",
-          description:
-            "Provide most popular courses that your want to join and lets start the course for the most simply way in here",
-          avatarSrc: "/src/assets/images/avatar1.png",
-          author: "Albert Flores",
-        },
-        {
-          imageSrc: "/src/assets/images/featured.png",
-          price: "$99.0",
-          title: "The Complete Copywriting",
-          lessonCount: "17 Lesson",
-          description:
-            "Provide most popular courses that your want to join and lets start the course for the most simply way in here",
-          avatarSrc: "/src/assets/images/avatar2.png",
-          author: "Albert Flores",
-        },
-        {
-          imageSrc: "/src/assets/images/featured.png",
-          price: "$99.0",
-          title: "The Complete Copywriting",
-          lessonCount: "17 Lesson",
-          description:
-            "Provide most popular courses that your want to join and lets start the course for the most simply way in here",
-          avatarSrc: "/src/assets/images/avatar3.png",
-          author: "Albert Flores",
-        },
-      ],
+      // courses: [
+      //   {
+      //     imageSrc: "/src/assets/images/featured.png",
+      //     price: "$99.0",
+      //     title: "The Complete Copywriting",
+      //     lessonCount: "17 Lesson",
+      //     description:
+      //       "Provide most popular courses that your want to join and lets start the course for the most simply way in here",
+      //     avatarSrc: "/src/assets/images/avatar1.png",
+      //     author: "Albert Flores",
+      //   },
+      //   {
+      //     imageSrc: "/src/assets/images/featured.png",
+      //     price: "$99.0",
+      //     title: "The Complete Copywriting",
+      //     lessonCount: "17 Lesson",
+      //     description:
+      //       "Provide most popular courses that your want to join and lets start the course for the most simply way in here",
+      //     avatarSrc: "/src/assets/images/avatar2.png",
+      //     author: "Albert Flores",
+      //   },
+      //   {
+      //     imageSrc: "/src/assets/images/featured.png",
+      //     price: "$99.0",
+      //     title: "The Complete Copywriting",
+      //     lessonCount: "17 Lesson",
+      //     description:
+      //       "Provide most popular courses that your want to join and lets start the course for the most simply way in here",
+      //     avatarSrc: "/src/assets/images/avatar3.png",
+      //     author: "Albert Flores",
+      //   },
+      // ],
+      allCourses: [],
+      seeMoreBtn : false
     };
   },
+  methods: {
+    async getCourses(){
+      try {
+                const {data} = await this.$axios.get('/listCours');
+
+                // console.log("res",data);
+                this.allCourses = data.data.cours;
+                // console.log('courses:', this.allCourses);
+            } catch (error) {
+                console.error(error);
+            }
+    },
+  },
+  created(){
+    this.getCourses()
+  }
 };
 </script>
 

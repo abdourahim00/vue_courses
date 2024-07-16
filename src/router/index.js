@@ -18,7 +18,7 @@ const router = new VueRouter({
     },
 
     {
-      path: '/details',
+      path: '/details/:slug',
       name : 'details',
       component: DetailsView
     }
