@@ -27,11 +27,11 @@
             <p class="text-p-color font-Inter text-sm">by Albert Flores</p>
           </div>
 
-          <div class="relative lg:-mb-[30rem]" >
+          <div class="relative lg:-mb-[30rem]">
             <img
               :src="courses.image"
               alt=""
-              class="max-w-full rounded-3xl" 
+              class="max-w-full rounded-3xl w-[80%] h-[100%]"
             />
 
             <div class="absolute left-[40%] top-[40%] right[50%]">
@@ -50,7 +50,7 @@
         </div>
         <div class="lg:col-span-1 col-span-12"></div>
         <div
-          class="lg:col-span-3 col-span-12 bg-white rounded-2xl shaddow-xl shadow-2xl w-[100%] h-[50%]"
+          class="lg:col-span-3 col-span-12 bg-white rounded-2xl shaddow-xl shadow-2xl w-[100%] h-[80%]"
         >
           <div>
             <div class="p-4">
@@ -61,11 +61,20 @@
                 Provide most popular courses that your want to join and lets
                 start the course for the most simply way in here
               </p>
-              <div class="text-center">
+              <div v-if="auth.getIsAuthenticated" class="text-center">
                 <button
+                  @click="addToOrder"
                   class="inline-block px-16 py-3 text-sm text-white border border-black bg-black rounded-xl mb-5 w-full"
                 >
-                  Add to Cart
+                  Buy Now
+                </button>
+              </div>
+              <div v-else class="text-center">
+                <button
+                  @click="addToOrder"
+                  class="inline-block px-16 py-3 text-sm text-white border border-black bg-black rounded-xl mb-5 w-full"
+                >
+                  Se Connecter
                 </button>
               </div>
 
@@ -111,7 +120,7 @@
                     <div class="flex justify-between">
                       <div class="flex gap-1">
                         <div>
-                            <svg
+                          <svg
                             width="24"
                             height="24"
                             viewBox="0 0 24 24"
@@ -137,7 +146,7 @@
                         <p
                           class="text-p-color font-Inter-SemiBold text-sm text-right"
                         >
-                        6hr 48m
+                          6hr 48m
                         </p>
                       </div>
                     </div>
@@ -146,7 +155,7 @@
                     <div class="flex justify-between">
                       <div class="flex gap-1">
                         <div>
-                            <svg
+                          <svg
                             width="24"
                             height="24"
                             viewBox="0 0 24 24"
@@ -170,9 +179,7 @@
                           </svg>
                         </div>
                         <div>
-                          <p class="text-p-color font-Inter text-sm">
-                            Lesons
-                          </p>
+                          <p class="text-p-color font-Inter text-sm">Lesons</p>
                         </div>
                       </div>
                       <div>
@@ -189,7 +196,7 @@
                     <div class="flex justify-between">
                       <div class="flex gap-1">
                         <div>
-                            <svg
+                          <svg
                             width="19"
                             height="20"
                             viewBox="0 0 19 20"
@@ -204,7 +211,6 @@
                               stroke-linejoin="round"
                             />
                           </svg>
-
                         </div>
                         <div>
                           <p class="text-p-color font-Inter text-sm">
@@ -232,11 +238,38 @@
 </template>
 
 <script>
+import setAuthHeader from '../utils/setAuthHeader';
+import { useAuthStore } from "../stores/auth";
 export default {
   props: {
-    courses : {},
+    courses: {},
+    cours_id : null,
+    quantity : 1,
+    
+  },
+  data(){
+    return{
+      auth : useAuthStore()
+    }
+  },
+  methods: {
+    async addToOrder() {
+      try {
+        const { data } = await this.$axios.post("/orders", {
+          cours_id: this.courses.id,
+          quantity: this.quantity,
+          // setAuthHeader()
+        });
+        // console.log('cours id :  ', this.cours_id);
+        // console.log('Quantite : ' ,this.quantity);
+        alert("Cours ajoute à votre commande avec succès");
 
-  }
+      } catch (error) {
+        console.error(error);
+        alert("Une erreur s'est produite lors de la commande du cours");
+      }
+    },
+  },
 };
 </script>
 

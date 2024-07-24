@@ -16,7 +16,13 @@ import Category from "../components/Category.vue";
 import Featured from "../components/Featured.vue";
 import Talented from "../components/Talented.vue";
 import Form from "../components/FormComponent.vue";
+import { useAuthStore } from "../stores/auth";
 export default {
+  data(){
+    return{
+      auth: useAuthStore(),
+    }
+  },
   components: {
     Home: Home,
     Choose: Choose,

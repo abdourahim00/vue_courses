@@ -55,14 +55,27 @@
             class="px-2 py-7 text-color-second font-Inter-Medium"
             >Blog</router-link
           >
+          <div v-if="auth.getIsAuthenticated">
           <li>
-            <router-link
-              to="/"
-              class="px-5 py-2 text-color-tertiaire border border-color-border-button rounded-lg"
-            >
-              Contact
-            </router-link>
-          </li>
+          <button
+            @click="isLogout"
+            class="block px-5 py-2 text-color-tertiaire border border-color-border-button rounded-lg"
+          >
+            Deconnexion
+          </button>
+        </li>
+        </div>
+
+        <div v-if="!auth.getIsAuthenticated">
+          <li>
+          <router-link
+            to="/connexion"
+            class="block px-5 py-2 text-color-tertiaire border border-color-border-button rounded-lg"
+          >
+            Connexion
+          </router-link>
+        </li>
+        </div>
         </ul>
       </nav>
     </div>
@@ -84,25 +97,53 @@
         <router-link to="/" class="text-color-second font-Inter-Medium"
           >Blog</router-link
         >
-        <li>
-          <router-link
-            to="/"
+        <div v-if ="auth.getIsAuthenticated">
+          <li>
+          <button
+          @click="isLogout"
             class="block px-5 py-2 text-color-tertiaire border border-color-border-button rounded-lg"
           >
-            Contact
+            Deconnexion
+          </button>
+        </li>
+        </div>
+
+        <div v-if="!auth.getIsAuthenticated">
+          <li>
+          <router-link
+            to="/connexion"
+            class="block px-5 py-2 text-color-tertiaire border border-color-border-button rounded-lg"
+          >
+            Connexion
           </router-link>
         </li>
+        </div>
+        
       </ul>
     </div>
   </div>
 </template>
 <script>
+import { useAuthStore } from '../stores/auth';
+
 export default {
   data() {
     return {
       isMenuOpen: false,
+      auth: useAuthStore(),
     };
   },
+  methods: {
+    isLogout(){
+      $response = this.auth.logout();
+      if ($response) {
+        this.$router.push('/connexion');
+    }
+    else {
+      alert('Echec de la deconnexion');
+    }
+    }
+  }
 };
 </script>
 

@@ -7,10 +7,11 @@
     "preview": "vite preview --port 4173"
   },
   "dependencies": {
+    "@vueuse/core": "^10.11.0",
+    "axios": "^1.7.2",
     "pinia": "^2.0.16",
     "vue": "^2.7.7",
-    "vue-router": "^3.5.4",
-    "axios": "^1.7.2"
+    "vue-router": "^3.5.4"
   },
   "devDependencies": {
     "@vitejs/plugin-legacy": "^2.0.0",
