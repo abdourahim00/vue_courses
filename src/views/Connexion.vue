@@ -1,7 +1,7 @@
 <template>
   <section class="container mx-auto mt-32">
     <div :class="{ cont: true, 's--signup': isSignUp }">
-      <form @submit.prevent="loginUser">
+      <form @submit.prevent="userLogin">
         <div class="form sign-in">
           <h2>Bienvenue</h2>
           <label>
@@ -12,7 +12,7 @@
             <span>Mot de Passe</span>
             <input type="password" v-model="password" required />
           </label>
-          <div v-if="store.getIsLoggedIn">
+          <div v-if="isLoggedIn">
             <label>
               <span>OTP</span>
               <input type="text" v-model="otp" required />
@@ -21,9 +21,9 @@
           <button type="submit" class="submit">Connexion</button>
         </div>
       </form>
-      <div v-if="store.getIsLoggedIn">
+      <div v-if="isLoggedIn">
         <div class="bg-black">
-          <button @click="OTPverify">Vérifier OTP</button>
+          <button @click="verifyOTP">Vérifier OTP</button>
         </div>
         <br />
         <div class="bg-red-500">
@@ -72,7 +72,7 @@
 </template>
   
   <script>
-import { useAuthStore } from '../stores/auth';
+import { useAuthStore } from "../stores/auth";
 export default {
   data() {
     return {
@@ -84,21 +84,68 @@ export default {
       isLoggedIn: false,
       otp: "",
       store: useAuthStore(),
+      auth: {
+        isAuthenticated: false,
+        token: "",
+        user: {},
+      },
     };
   },
   methods: {
-    loginUser(){
-      this.store.userLogin(this.email, this.password);
-    },
-    async OTPverify() {
-      const result = this.store.verifyOTP(this.otp);
-      if (result) {
-        return this.$router.push("/");
+    // loginUser(){
+    //   this.store.userLogin(this.email, this.password);
+    // },
+    async userLogin() {
+      try {
+        const { data } = await this.$axios.post("/login", {
+          email: this.email,
+          password: this.password,
+        });
+        console.log("Réponse du serveur:", data);
+        if (data.status == 200) {
+          this.isLoggedIn = true;
+          this.auth.user = data.data.user;
+          alert("Connexion réussie!");
+          return true;
+        }
+      } catch (error) {
+        console.log(error);
+        alert("Connexion échouée!");
+        return false;
       }
-      else{
+    },
+    async verifyOTP() {
+      // console.log(otp);
+      try {
+        const { data } = await this.$axios.post("/verifyOTP", {
+          otp: this.otp,
+        });
+        if (data.status == 200) {
+          this.auth.isAuthenticated = true;
+          this.auth.token = data.data.token;
+          this.store.saveInLocalStorage(this.auth);
+          this.$axios.defaults.headers = {
+            'Authorization': `Bearer ${this.auth.token}`,
+        };
+        // console.log('test', this.$axios.defaults.headers);
+          alert("OTP valide ! Vous êtes maintenant connecté.");
+          return this.$router.push("/");
+        }
+      } catch (error) {
+        console.log(error);
         alert("OTP invalide !");
+        return false;
       }
     },
+    // async OTPverify() {
+    //   const result = this.store.verifyOTP(this.otp);
+    //   if (result) {
+    //     return this.$router.push("/");
+    //   }
+    //   else{
+    //     alert("OTP invalide !");
+    //   }
+    // },
     toggleSignUp() {
       this.isSignUp = !this.isSignUp;
     },

@@ -28,6 +28,24 @@ const router = new VueRouter({
       path : '/connexion',
       name: 'connexion',
       component : Connexion
+    },
+
+    {
+      path: '/user/course-bought',
+      name: 'course-bought',
+      component: () => import('../components/CoursePayment.vue')
+    },
+
+    {
+      path: '/user/transaction',
+      name: 'transaction',
+      component: () => import('../components/Transaction.vue')
+    },
+
+    {
+      path: '/user',
+      name: 'updateUser',
+      component: () => import('../components/UpdateUser.vue')
     }
     
 

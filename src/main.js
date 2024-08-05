@@ -9,6 +9,7 @@ import './assets/css/style.css'
 // import setAuthHeader from '../src/utils/setAuthHeader'
 
 axios.defaults.baseURL = 'http://127.0.0.1:8000/api';
+// axios.defaults.baseURL = 'https://cc62-41-83-101-124.ngrok-free.app/api';
 
 // if(localStorage.getItem){
 //   setAuthHeader(localStorage.)

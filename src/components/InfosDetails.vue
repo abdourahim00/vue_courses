@@ -4,7 +4,7 @@
       <h1 class="text-3xl font-Inter-Bold sm:text-3xl mb-5">
         About the course
       </h1>
-      <p class="text-p-color font-Inter text-lg mb-10">
+      <p class="line-clamp-3 text-p-color font-Inter text-lg mb-10">
         {{ courses.description }}
       </p>
 

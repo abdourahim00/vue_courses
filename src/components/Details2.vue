@@ -26,31 +26,40 @@
             <img src="@/assets/images/avatar1.png" alt="" />
             <p class="text-p-color font-Inter text-sm">by Albert Flores</p>
           </div>
-
-          <div class="relative lg:-mb-[30rem]">
-            <img
-              :src="courses.image"
-              alt=""
-              class="max-w-full rounded-3xl w-[80%] h-[100%]"
-            />
-
-            <div class="absolute left-[40%] top-[40%] right[50%]">
-              <svg
-                width="80"
-                height="80"
-                viewBox="0 0 80 80"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle cx="40" cy="40" r="40" fill="white" />
-                <path d="M56 40L32 26.1436V53.8564L56 40Z" fill="#1C5CFF" />
-              </svg>
+          <a
+            :href="'https://127.0.0.1:8000/api/video/getVideo/' + courses.id"
+            class="w-full" :class="{ hidden: !payment }"
+          >
+            <div class="relative lg:-mb-[30rem]">
+              <img
+                :src="courses.image"
+                alt=""
+                class="max-w-full rounded-3xl w-[80%] h-[100%]"
+              />
+              <div class="absolute left-[40%] top-[40%] right[50%]">
+                <svg
+                  width="80"
+                  height="80"
+                  viewBox="0 0 80 80"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="40" cy="40" r="40" fill="white" />
+                  <path d="M56 40L32 26.1436V53.8564L56 40Z" fill="#1C5CFF" />
+                </svg>
+              </div>
+            </div>
+          </a>
+          <div class="grid grid-cols-12 absolute" :class="{ hidden: payment }">
+            <div class="cols-span-12 relative">
+              <iframe width="800" height="500" src="https://www.youtube.com/embed/OS_TVKWDJos?si=r9KQz-0gVdyJN5Qq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
           </div>
         </div>
         <div class="lg:col-span-1 col-span-12"></div>
         <div
-          class="lg:col-span-3 col-span-12 bg-white rounded-2xl shaddow-xl shadow-2xl w-[100%] h-[80%]"
+          class="lg:col-span-3 col-span-12 bg-white rounded-2xl shadow-xl w-[100%] h-[80%]"
+          :class="{ hidden: !payment }"
         >
           <div>
             <div class="p-4">
@@ -70,12 +79,12 @@
                 </button>
               </div>
               <div v-else class="text-center">
-                <button
-                  @click="addToOrder"
+                <router-link
+                  to="/connexion"
                   class="inline-block px-16 py-3 text-sm text-white border border-black bg-black rounded-xl mb-5 w-full"
                 >
                   Se Connecter
-                </button>
+                </router-link>
               </div>
 
               <div class="">
@@ -238,37 +247,61 @@
 </template>
 
 <script>
-import setAuthHeader from '../utils/setAuthHeader';
 import { useAuthStore } from "../stores/auth";
+import CoursePayment from "./CoursePayment.vue";
 export default {
   props: {
     courses: {},
-    cours_id : null,
-    quantity : 1,
-    
   },
-  data(){
-    return{
-      auth : useAuthStore()
-    }
+  data() {
+    return {
+      auth: useAuthStore(),
+      cours_id: null,
+      quantity: 1,
+      video: null,
+      payment: CoursePayment.isBought,
+    };
   },
   methods: {
     async addToOrder() {
       try {
-        const { data } = await this.$axios.post("/orders", {
+        const response = await this.$axios.post("/orders", {
           cours_id: this.courses.id,
           quantity: this.quantity,
           // setAuthHeader()
         });
+        console.log(response);
+        if (response.data.success == 1) {
+          new PayTech({})
+            .withOption({
+              tokenUrl: response.data.redirect_url,
+
+              prensentationMode: PayTech.OPEN_IN_POPUP,
+            })
+            .send();
+        }
         // console.log('cours id :  ', this.cours_id);
         // console.log('Quantite : ' ,this.quantity);
         alert("Cours ajoute à votre commande avec succès");
-
       } catch (error) {
         console.error(error);
         alert("Une erreur s'est produite lors de la commande du cours");
       }
     },
+    // async getVideo() {
+    //   try {
+    //     const { data } = await this.$axios.get(`/video/getVideo/${this.courses.id}`, {
+    //       headers: {
+    //         Authorization: `Bearer ${this.auth.getToken}`,
+    //       },
+    //     });
+
+    //     this.video = data.data.video;
+    //     console.log(data);
+    //   } catch (error) {
+    //     console.error(error);
+    //   }
+    // }
   },
 };
 </script>
